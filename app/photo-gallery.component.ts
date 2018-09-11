@@ -3,7 +3,9 @@ import {TNSFontIconService, TNSFontIconPipe} from 'nativescript-ng2-fonticon';
 import {Image} from 'ui/image';
 import {GC} from 'utils/utils';
 
+import { ImageAsset } from 'tns-core-modules/image-asset';
 import {ImageSource} from 'image-source';
+import * as imageAsset from 'image-asset';
 import * as imageSource from 'image-source';
 import * as camera from 'camera';
 
@@ -29,7 +31,12 @@ export class PhotoGalleryComponent {
     camera.takePicture({ 
       width: 400, height: 400, keepAspectRatio: true 
     })
-    .then((picture) => {
+    .then((pictureAsset) => {
+      let picture = new ImageSource();
+      picture.fromAsset(pictureAsset).then(
+        (imgSrc) => {
+          picture = imgSrc;        
+        });
       this.display(picture);
       this.pictures.unshift(picture);
       GC();
