@@ -4,16 +4,16 @@ import {Image} from 'ui/image';
 import {GC} from 'utils/utils';
 
 import { ImageAsset } from 'tns-core-modules/image-asset';
-import {ImageSource} from 'image-source';
-import * as imageAsset from 'image-asset';
-import * as imageSource from 'image-source';
-import * as camera from 'camera';
+import {ImageSource} from 'tns-core-modules/image-source';
+//import * as ImageAsset from 'tns-core-modules/image-asset';
+//import * as ImageSource from 'tns-core-modules/image-source';
+import * as camera from  'nativescript-camera';
 
 @Component({
   selector: 'pg-photo-gallery',
   templateUrl: 'photo-gallery.component.html',
   styleUrls: ['photo-gallery.component.css'],
-  pipes: [TNSFontIconPipe]
+  //pipes: [TNSFontIconPipe]
 })
 export class PhotoGalleryComponent {
   @ViewChild('displayedPicture') displayedPictureRef: ElementRef;
@@ -65,8 +65,12 @@ export class PhotoGalleryComponent {
   }
 
   concealPicture(): void {
-    this.displayedPictureView.imageSource = 
-      imageSource.fromFile(this.picturePlaceholderPath);
+    this.displayedPictureView.imageSource.fromFile(
+        this.picturePlaceholderPath).then (
+            () => {
+              // successfully loaded; add logging?     
+            }        
+        );
   }
 
   private displayClosestPictureFrom(pictureIndex: number): void {

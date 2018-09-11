@@ -9,8 +9,8 @@ import * as imageProcessingModule from './utils/image-processing';
 @Component({
   selector: 'my-app',
   templateUrl: 'top.component.html',
-  directives: [PhotoGalleryComponent],
-  pipes: [TNSFontIconPipe]
+  //directives: [PhotoGalleryComponent],
+  //pipes: [TNSFontIconPipe]
 })
 export class TopComponent {
   @ViewChild(PhotoGalleryComponent) photoGalleryComponent: PhotoGalleryComponent;
