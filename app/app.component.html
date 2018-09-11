@@ -1,14 +1,3 @@
-<ScrollView>
-  <StackLayout>
-    <pg-photo-gallery></pg-photo-gallery>
-      <Label 
-        verticalAlignement="middle"
-        [text]="'fa-cogs' | fonticon"
-        (tap)="transformDisplayedPictureToGrayScale()"
-        class="fa process-picture-icon"></Label>
-    <Image
-      #transformedPicture 
-      stretch="aspectFit"
-      class="transformed-picture"></Image>
-  </StackLayout>
-</ScrollView>
+<!-- https://docs.nativescript.org/angular/core-concepts/angular-navigation.html#page-router-outlet -->
+<page-router-outlet></page-router-outlet>
+>

@@ -1,32 +1,11 @@
-import {Component, ViewChild, ElementRef} from '@angular/core';
-import {Image} from 'ui/image';
-
+import { Component } from "@angular/core";
 import {PhotoGalleryComponent} from './photo-gallery.component';
-import {TNSFontIconService, TNSFontIconPipe} from 'nativescript-ng2-fonticon';
-
-import * as imageProcessingModule from './utils/image-processing';
+import { registerElement } from "nativescript-angular/element-registry";
+registerElement("pg-photo-gallery", () => <any>PhotoGalleryComponent);
 
 @Component({
-  selector: 'my-app',
-  templateUrl: 'app.component.html',
-  directives: [PhotoGalleryComponent],
-  pipes: [TNSFontIconPipe]
+    selector: "ns-app",
+    templateUrl: "app.component.html",
 })
-export class AppComponent {
-  @ViewChild(PhotoGalleryComponent) photoGalleryComponent: PhotoGalleryComponent;
-  @ViewChild('transformedPicture') transformedPictureRef: ElementRef;
 
-  constructor(private fonticon: TNSFontIconService) {
-  }
-
-  transformDisplayedPictureToGrayScale(){
-    imageProcessingModule.transformToGrayScale({
-      source: this.photoGalleryComponent.displayedPictureView,
-      destination: this.transformedPictureView
-    });
-  }
-
-  private get transformedPictureView(): Image {
-    return this.transformedPictureRef.nativeElement;
-  }
-}
+export class AppComponent { }
