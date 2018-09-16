@@ -3,6 +3,8 @@ import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { AppRoutingModule, navigatableComponents } from "./app.routing";
 import { AppComponent } from "./app.component";
 
+import {PhotoGalleryComponent} from './photo-gallery.component';
+
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
 // import { NativeScriptFormsModule } from "nativescript-angular/forms";
@@ -11,16 +13,17 @@ import { AppComponent } from "./app.component";
 // import { NativeScriptHttpModule } from "nativescript-angular/http";
 
 @NgModule({
-    bootstrap: [
-        AppComponent
-    ],
     imports: [
         NativeScriptModule,
         AppRoutingModule
     ],
     declarations: [
         AppComponent,
+        PhotoGalleryComponent,
     ...navigatableComponents,
+    ],
+    bootstrap: [
+        AppComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA

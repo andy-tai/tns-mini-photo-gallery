@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import {PhotoGalleryComponent} from './photo-gallery.component';
 import { registerElement } from "nativescript-angular/element-registry";
-registerElement("pg-photo-gallery", () => <any>PhotoGalleryComponent);
+registerElement("PhotoGalleryComponent", () => <any>PhotoGalleryComponent);
 
 @Component({
     selector: "ns-app",

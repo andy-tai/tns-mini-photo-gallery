@@ -19,7 +19,7 @@ import * as imageProcessingModule from './utils/image-processing';
   //pipes: [TNSFontIconPipe]
 })
 export class TopComponent  implements OnInit {
-  @ViewChild(PhotoGalleryComponent) photoGalleryComponent: PhotoGalleryComponent;
+  @ViewChild("pgPhotoGallery" /*PhotoGalleryComponent*/) photoGalleryComponent: PhotoGalleryComponent;
   @ViewChild('transformedPicture') transformedPictureRef: ElementRef;
 
   constructor(protected page: Page, protected router: RouterExtensions,

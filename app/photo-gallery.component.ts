@@ -1,18 +1,23 @@
-import {Component, ViewChild, ElementRef} from '@angular/core';
+import {Component, ViewChild, ElementRef, , NgZone} from '@angular/core';
 //import {TNSFontIconService, TNSFontIconPipe} from 'nativescript-ng2-fonticon';
 import {Image} from 'ui/image';
 import {GC} from 'utils/utils';
+import {Location} from "@angular/common";
+import {Page} from "ui/page";
+import { RouterExtensions } from "nativescript-angular/router";
+import {View} from "ui/core/view";
 
 import { ImageAsset } from 'tns-core-modules/image-asset';
-import {ImageSource} from 'tns-core-modules/image-source';
+import { ImageSource } from 'tns-core-modules/image-source';
 //import * as ImageAsset from 'tns-core-modules/image-asset';
 //import * as ImageSource from 'tns-core-modules/image-source';
 import * as camera from  'nativescript-camera';
 
 @Component({
+  moduleId: module.id,
   selector: 'pg-photo-gallery',
-  templateUrl: 'photo-gallery.component.html',
-  styleUrls: ['photo-gallery.component.css'],
+  templateUrl: "./photo-gallery.component.html",
+  styleUrls: ["./photo-gallery.component.css"],
   //pipes: [TNSFontIconPipe]
 })
 export class PhotoGalleryComponent {
@@ -20,7 +25,12 @@ export class PhotoGalleryComponent {
 
   pictures: Array<ImageSource> = new Array<ImageSource>();
 
-  constructor(/*private fonticon: TNSFontIconService*/){
+  constructor(
+        protected router: RouterExtensions,
+        location: Location,
+        protected page: Page, 
+        protected zone: NgZone
+        /*private fonticon: TNSFontIconService*/){
   }
 
   get picturePlaceholderPath(): string {
