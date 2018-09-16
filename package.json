@@ -1,7 +1,7 @@
 {
-  "description": "NativeScript Application",
+  "description": "TNS Photo Gallery",
   "license": "SEE LICENSE IN <your-license-filename>",
-  "readme": "NativeScript Application",
+  "readme": "TNS Photo Gallery",
   "repository": "<fill-your-repository-here>",
   "nativescript": {
     "id": "org.nativescript.tnsphotogallery",

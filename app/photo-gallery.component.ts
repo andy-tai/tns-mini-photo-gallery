@@ -1,5 +1,5 @@
 import {Component, ViewChild, ElementRef} from '@angular/core';
-import {TNSFontIconService, TNSFontIconPipe} from 'nativescript-ng2-fonticon';
+//import {TNSFontIconService, TNSFontIconPipe} from 'nativescript-ng2-fonticon';
 import {Image} from 'ui/image';
 import {GC} from 'utils/utils';
 
@@ -20,7 +20,7 @@ export class PhotoGalleryComponent {
 
   pictures: Array<ImageSource> = new Array<ImageSource>();
 
-  constructor(private fonticon: TNSFontIconService){
+  constructor(/*private fonticon: TNSFontIconService*/){
   }
 
   get picturePlaceholderPath(): string {

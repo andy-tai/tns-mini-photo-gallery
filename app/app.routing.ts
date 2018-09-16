@@ -3,7 +3,7 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { Routes } from "@angular/router";
 
 import {TopComponent} from './top.component';
-import {TNSFontIconService, TNSFontIconPipe} from 'nativescript-ng2-fonticon';
+//import {TNSFontIconService, TNSFontIconPipe} from 'nativescript-ng2-fonticon';
 
 import * as imageProcessingModule from './utils/image-processing';
 

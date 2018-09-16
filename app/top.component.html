@@ -1,14 +1,17 @@
 <ScrollView>
   <StackLayout>
-    <pg-photo-gallery></pg-photo-gallery>
-      <Label 
-        verticalAlignement="middle"
-        [text]="'fa-cogs' | fonticon"
-        (tap)="transformDisplayedPictureToGrayScale()"
+        <pg-photo-gallery
+            horizontalAlignment="center"  
+            id="pg-photo-gallery">
+        </pg-photo-gallery>
+        <Label 
+            verticalAlignement="middle"
+            [text]="fonticon"
+            (tap)="transformDisplayedPictureToGrayScale()"
         class="fa process-picture-icon"></Label>
-    <Image
-      #transformedPicture 
-      stretch="aspectFit"
-      class="transformed-picture"></Image>
+        <Image
+          #transformedPicture 
+          stretch="aspectFit"
+          class="transformed-picture"></Image>
   </StackLayout>
 </ScrollView>
